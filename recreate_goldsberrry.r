@@ -10,6 +10,8 @@ library(cowplot)
 # load PBP data with ncaahoopr
 dat <- data.table(get_pbp("Dayton", "2019-20" , T))
 
+# create side one of court for plotting (court is inherent to ncaahoopr)
+side_one <- court %>% filter(side == 1)
 
 # subset and process for shot chart data
 gf <- dat[shot_team == "Dayton" & free_throw == FALSE & shooter == "Jalen Crutcher"]
